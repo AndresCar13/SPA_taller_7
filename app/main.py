@@ -7,6 +7,10 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-app.include_router(router, prefix="/book", tags=["book"])
+@app.get('/')
+async def inicio():
+    return "Biemvenido"
+
+app.include_router(router, prefix="/tipodocu", tags=["tipodocu"])
 
 
